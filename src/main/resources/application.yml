@@ -1,3 +1,10 @@
 micronaut:
   application:
     name: mnLegacyDemo
+  server:
+    port: 8081
+hello:
+  controller:
+    path: "/hello"
+  service:
+    greeting: "Hello from service"
