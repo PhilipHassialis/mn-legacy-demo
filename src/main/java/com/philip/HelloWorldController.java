@@ -12,14 +12,26 @@ public class HelloWorldController {
   // private final HelloWorldService helloWorldService;
 
   private HelloWorldService service;
+  private final GreetingConfig config;
 
-  public HelloWorldController(final HelloWorldService service) {
+  public HelloWorldController(final HelloWorldService service, final GreetingConfig config) {
     this.service = service;
+    this.config = config;
   }
 
   @Get("/")
   public String index() {
     return service.sayHi();
+  }
+
+  @Get("/gr")
+  public String greetInGreek() {
+    return config.getGr();
+  }
+
+  @Get("/en")
+  public String greetInEnglish() {
+    return config.getEn();
   }
 
 }
