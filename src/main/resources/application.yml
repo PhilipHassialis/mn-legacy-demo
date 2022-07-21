@@ -12,3 +12,15 @@ hello:
     greeting:
       gr: "Χαίρετε"
       en: "Hello"
+#JACKSON Properties
+jackson:
+  #property-naming-strategy: SNAKE_CASE
+  serialization:
+    writeDatesAsTimestamps: false
+    writeDatesWithZoneId: true
+    writeDateTimestampsAsNanoseconds: false
+  deserialization:
+    failOnUnknownProperties: false
+  generator:
+    writeNumbersAsStrings: false
+    writeBigDecimalAsPlain: false

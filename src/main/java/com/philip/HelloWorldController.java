@@ -34,4 +34,9 @@ public class HelloWorldController {
     return config.getEn();
   }
 
+  @Get("/json")
+  public Greeting json() {
+    return new Greeting();
+  }
+
 }

@@ -5,6 +5,9 @@ import io.micronaut.http.client.annotation.Client;
 import io.micronaut.runtime.EmbeddedApplication;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 import org.junit.jupiter.api.Test;
+
+import com.fasterxml.jackson.databind.node.ObjectNode;
+
 import org.junit.jupiter.api.Assertions;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -44,4 +47,9 @@ class HelloWorldControllerTest {
         assertEquals("Hello", result);
     }
 
+    @Test
+    void returnGreetingAsJson() {
+        final ObjectNode result = client.toBlocking().retrieve("/hello/json", ObjectNode.class);
+        assertEquals("someJson", result.toString());
+    }
 }
